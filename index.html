@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamey Tshinyam — Développeur Web Fullstack</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Effet de lueur d'arrière-plan texturé -->
+    <div class="hero-glow-bg"></div>
+
+    <!-- Navigation / Header -->
+    <header class="site-header">
+        <div class="logo">Kamey.</div>
+        <button class="menu-btn" id="menuToggle">Menu <i class="fa-solid fa-bars"></i></button>
+    </header>
+
+    <!-- Menu Overlay Coulissant -->
+    <nav class="nav-overlay" id="navOverlay">
+        <div class="nav-top-bar">
+            <span class="nav-title-top">NAVIGATION</span>
+            <button class="close-btn" id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="nav-content">
+            <!-- Groupe Sections -->
+            <div class="nav-group">
+                <span class="nav-category">SECTIONS</span>
+                <ul>
+                    <li><a href="#home">HOME <span class="nav-num">01</span></a></li>
+                    <li><a href="#about">À PROPOS<span class="nav-num">02</span></a></li>
+                    <li><a href="#skills">COMPÉTENCES <span class="nav-num">03</span></a></li>
+                    <li><a href="#experience">EXPERIENCES <span class="nav-num">04</span></a></li>
+                    <li><a href="#projects">PROJETS <span class="nav-num">05</span></a></li>
+                    <li><a href="#contact">CONTACT <span class="nav-num">06</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Groupe Socials -->
+            <div class="nav-group socials-group">
+                <span class="nav-category">SOCIALS</span>
+                <div class="socials-grid">
+                    <a href="https://github.com/tshinyam-del" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/..." target="_blank">LinkedIn</a>
+                    <a href="mailto:tshinyam@yahoo.com">Email</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1 : HOME -->
+    <section id="home" class="hero-section">
+        <div class="hero-main-title">
+            <h1>Kamey Tshinyam</h1>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-text">Contactez-Moi</a>
+                <a href="CV_KAMEY TSHINYAM.pdf" target="_blank" class="btn-link">
+                    Voir CV <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-footer-quote">
+            <span>Restez <span id="quoteText" class="animated-word">Inarrêtable</span></span>
+        </div>
+    </section>
+
+    <!-- SECTION 2 : À PROPOS -->
+    <section id="about" class="about-section">
+        <div class="section-title-container">
+            <span class="section-num">02</span>
+            <h2>À PROPOS</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-card-container">
+                <div class="about-tabs">
+                    <button class="tab-btn active" data-tab="brief">01 BRIEF</button>
+                    <button class="tab-btn" data-tab="edu">02 EDU</button>
+                    <button class="tab-btn" data-tab="stats">03 STATISTIQUES</button>
+                    <button class="tab-btn" data-tab="devise">04 DEVISE</button>
+                </div>
+                <div class="tab-content active" id="brief">
+                    <p>Je conçois des applications web dynamiques, du front-end aux architectures back-end. Je transforme des idées complexes en expériences fluides.</p>
+                </div>
+                <div class="tab-content" id="edu">
+                    <h4>Développeur Web Fullstack de formation</h4>
+                    <p>À Kadea Academy.</p>
+                </div>
+                <div class="tab-content" id="stats">
+                    <div class="stats-grid">
+                        <div><strong>0</strong><br>Repos</div>
+                        <div><strong>0s</strong><br>Contributions</div>
+                        <div><strong>3</strong><br>Projets</div>
+                    </div>
+                </div>
+                <div class="tab-content" id="devise">
+                    <p>« Le développement web c'est commencer pour finir expert, et non attendre devenir expert, pour commencer » — Kamey Tshinyam</p>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="visual-box">
+                    <img src="images/photo.png" alt="Photo de profil de Parfait Kamey" class="profile-pic">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 : COMPÉTENCES (Marquee) -->
+    <section id="skills" class="skills-section">
+        <div class="section-title-container">
+            <span class="section-num">03</span>
+            <h2>COMPÉTENCES</h2>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-track marquee-left">
+                <div class="skill-badge"><i class="fa-brands fa-html5"></i> HTML5</div>
+                <div class="skill-badge"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                <div class="skill-badge"><i class="fa-brands fa-js"></i> JavaScript</div>
+                <div class="skill-badge"><i class="fa-brands fa-js"></i> TypeScript</div>
+                <div class="skill-badge"><i class="fa-brands fa-node"></i> Node.js</div>
+                <div class="skill-badge"><i class="fa-solid fa-server"></i> AdonisJS</div>
+                <div class="skill-badge"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+                <div class="skill-badge"><i class="fa-solid fa-database"></i> MySQL</div>
+                <!-- Duplication -->
+                <div class="skill-badge"><i class="fa-brands fa-html5"></i> HTML5</div>
+                <div class="skill-badge"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                <div class="skill-badge"><i class="fa-brands fa-js"></i> JavaScript</div>
+                <div class="skill-badge"><i class="fa-brands fa-js"></i> TypeScript</div>
+                <div class="skill-badge"><i class="fa-brands fa-node"></i> Node.js</div>
+                <div class="skill-badge"><i class="fa-solid fa-server"></i> AdonisJS</div>
+                <div class="skill-badge"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+                <div class="skill-badge"><i class="fa-solid fa-database"></i> MySQL</div>
+            </div>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-track marquee-right">
+                <div class="skill-badge">Git & GitHub</div>
+                <div class="skill-badge">Lucid ORM</div>
+                <div class="skill-badge">Express.js</div>
+                <div class="skill-badge">REST APIs</div>
+                <div class="skill-badge">Tailwind CSS</div>
+                <div class="skill-badge">Render / Netlify</div>
+                <!-- Duplication -->
+                <div class="skill-badge">Git & GitHub</div>
+                <div class="skill-badge">Lucid ORM</div>
+                <div class="skill-badge">Express.js</div>
+                <div class="skill-badge">REST APIs</div>
+                <div class="skill-badge">Tailwind CSS</div>
+                <div class="skill-badge">Render / Netlify</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 : EXPÉRIENCE -->
+    <section id="experience" class="experience-section">
+        <div class="section-title-container">
+            <span class="section-num">04</span>
+            <h2>EXPÉRIENCE</h2>
+        </div>
+        <div class="exp-cards-container">
+            <div class="exp-card">
+                <div class="exp-header">
+                    <h3>Projet Fil Rouge — Clone X</h3>
+                    <span class="exp-date">2026</span>
+                </div>
+                <h4>Développeur Fullstack (Projet de fin de formation)</h4>
+                <p>Développement complet d'une application web type réseau social (Clone X) intégrant l'authentification sécurisée, la gestion des profils, le fil d'actualité multimédia et la gestion des abonnés.</p>
+                <div class="tags">
+                    <span>TypeScript</span><span>AdonisJS</span><span>Lucid ORM</span><span>PostgreSQL</span><span>CSS</span>
+                </div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-header">
+                    <h3>MAVILLE</h3>
+                    <span class="exp-date">2026 — En cours</span>
+                </div>
+                <h4>Concepteur & Développeur Fullstack</h4>
+                <p>Création d'une plateforme de ville numérique et place de marché à la demande intégrant recherche multimodale, alertes de prestataires en temps réel et gestion de commandes locales.</p>
+                <div class="tags">
+                    <span>Node.js</span><span>JavaScript</span><span>PostgreSQL</span><span>UI/UX</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 : PROJETS -->
+    <section id="projects" class="projects-section">
+        <div class="section-title-container">
+            <span class="section-num">05</span>
+            <h2>PROJETS</h2>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Projet 1 : MAVILLE -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="exp-date">Plateforme Urbaine</span>
+                    <span class="proj-num">01</span>
+                </div>
+                <h3>MAVILLE</h3>
+                <p>Plateforme de renseignement et de commande en ligne pour les commerces et services à Lubumbashi, optimisant les flux de commandes et la recherche locale multimodale.</p>
+                <div class="tags">
+                    <span>TypeScript</span>
+                    <span>Node.js</span>
+                    <span>PostgreSQL</span>
+                    <span>Lucid ORM</span>
+                </div>
+                <div class="project-footer">
+                    <a href="#contact" class="proj-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Projet 2 : APPLICATION POUR CLUBS SPORTIFS -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="exp-date">Gestion & Performance</span>
+                    <span class="proj-num">02</span>
+                </div>
+                <h2>VELYX</h2>                
+                <h4>Écosystème Numérique Multi-Clubs</h4>
+
+                <p>Une plateforme centralisée unifiant des écosystèmes applicatifs sur-mesure pour chaque club sportif.</p>
+                <div class="tags">
+                    <span>AdonisJS</span>
+                    <span>JavaScript</span>
+                    <span>MySQL</span>
+                    <span>Tailwind CSS</span>
+                </div>
+                <div class="project-footer">
+                    <a href="#contact" class="proj-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Projet 3 : RÉSEAU-SOCIAL DE TÉLÉ-PRÉSENCE -->
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="exp-date">Interaction en Temps Réel</span>
+                    <span class="proj-num">03</span>
+                </div>
+                <h2>PRESENCE</h2>
+
+                <h4>Réseau Social de Télé-présence</h4>
+
+                <p>Plateforme de communication immersive axée sur les flux multimédias en direct.</p>
+                <div class="tags">
+                    <span>TypeScript</span>
+                    <span>WebSockets</span>
+                    <span>API REST</span>
+                    <span>Frontend UI</span>
+                </div>
+                <div class="project-footer">
+                    <a href="#contact" class="proj-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 : CONTACT -->
+    <section id="contact" class="contact-section">
+        <div class="section-title-container">
+            <span class="section-num">06</span>
+            <h2>CONTACT</h2>
+        </div>
+        <div class="contact-box">
+            <h3>Parlons</h3>
+            <div class="contact-details">
+                <div class="social-links">
+                    <a href="https://github.com/tshinyam-del" target="_blank">github</a>
+                    <a href="https://www.linkedin.com/in/https://www.linkedin.com/in/parfait-kamey-5a0240247" target="_blank">linkedin</a>
+                    <a href="https://wa.me/+243854772265" target="_blank">whatsapp</a>
+                    <a href="https://t.me/+243970088304" target="_blank">telegram</a>
+                    <a href="mailto:tshinyam@yahoo.com">email</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Global -->
+    <footer class="site-footer">
+        <div class="footer-left">
+            <p>© 2026 Kamey Tshinyam. Tous droits réservés.</p>
+        </div>
+        <div class="footer-right">
+            <a href="#home">RETOUR EN HAUT ↑</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
