@@ -6,25 +6,38 @@
 }
 
 body {
-    background-color: #050b10;
+    background-color: #0b0f12; /* Fond très sombre, presque noir teinté de bleu nuit */
     color: #ffffff;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    position: relative;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.01em; /* Donne cet aspect compact et professionnel typique des portfolios dev modernes */
 }
 
-/* Effet de lueur d'arrière-plan */
-.hero-glow-bg, .glow-bg {
+/* Conteneur de la lueur d'arrière-plan */
+.background-glow {
     position: fixed;
-    top: -20%;
-    left: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(5, 11, 16, 0) 70%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Pour que la lumière ne bloque pas les clics */
     z-index: -1;
-    pointer-events: none;
+    overflow: hidden;
 }
 
+/* La "tache" de lumière turquoise/bleue (effet lampe de poche) */
+.background-glow::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 180, 216, 0.25) 0%, rgba(0, 119, 182, 0.05) 50%, transparent 80%);
+    filter: blur(80px); /* Flou intense pour diffuser la lumière */
+}
 /* Header & Menu (Barre horizontale fixe en haut) */
 .site-header {
     display: flex;
@@ -216,9 +229,9 @@ section {
 
 .section-num {
     position: absolute;
-    left: 220px;
-    top: -80px;
-    font-size: 14rem;
+    left: 120px;
+    top: -40px;
+    font-size: 10rem;
     font-weight: 9S00;
     color: rgba(255, 255, 255, 0.20);
     z-index: 0;
@@ -229,7 +242,7 @@ section {
 .section-title-container h2 {
     position: relative;
     z-index: 1;
-    font-size: 3.2rem;
+    font-size: 2.2rem;
     letter-spacing: 3px;
     color: #ffffff;
     margin-left: -10px;
@@ -670,4 +683,13 @@ section {
     .location-info p { text-align: left; }
     section { padding: 100px 20px 60px 20px; }
     .site-header { padding: 20px; }
+}
+
+.bento-card {
+    background: rgba(18, 24, 30, 0.65); /* Fond sombre semi-transparent */
+    backdrop-filter: blur(12px);        /* Effet verre dépoli */
+    -webkit-backdrop-filter: blur(12px);  /* Pour compatibilité Safari */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Bordure très fine et subtile */
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
