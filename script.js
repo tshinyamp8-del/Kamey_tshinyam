@@ -55,7 +55,7 @@ setInterval(() => {
 quoteTextElement.style.transition = "opacity 0.3s ease";
 
 // Liste de mots en français personnalisables (adaptée à votre identité)
-const words = ["Inarrêtable", "Infuckwithable", "Créatif", "Déterminé", "Innovant"];
+const words = ["Inarrêtable", "Polyvalent", "Currieux", "Créatif", "Déterminé", "Innovant"];
 let currentIndex = 0;
 const quoteElement = document.getElementById("quoteText");
 
