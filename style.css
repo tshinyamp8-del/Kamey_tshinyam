@@ -576,6 +576,7 @@ section {
     max-width: 900px;
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box; /* Empêche le padding de faire déborder la boîte */
 }
 
 .contact-box h3 {
@@ -629,13 +630,17 @@ section {
 .contact-details {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur mobile si besoin */
+    gap: 15px;
 }
 
 .social-links {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap; /* INDISPENSABLE : force les liens à aller à la ligne au lieu de déborder */
+    gap: 15px;       /* Espace propre entre les badges */
 }
 
 .social-links a {
@@ -653,6 +658,22 @@ section {
     color: #94a3b8;
     text-align: right;
     font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .contact-box {
+        padding: 25px 20px; /* Réduit les marges intérieures pour gagner de la place */
+    }
+
+    .contact-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .location-info p {
+        text-align: left; /* Aligne la localisation proprement sur mobile */
+    }
 }
 
 /* Site Footer */
