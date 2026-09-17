@@ -84,3 +84,30 @@ function changeQuoteWord() {
 
 // Change le mot toutes les 3,5 secondes
 setInterval(changeQuoteWord, 3500);
+
+async function fetchGitHubProfileStats() {
+    const username = 'tshinyam-del';
+    
+    try {
+        const response = await fetch(`https://api.github.com/users/${username}`);
+        if (!response.ok) throw new Error('Erreur réseau GitHub');
+        
+        const data = await response.json();
+
+        // Injection des 4 valeurs de ton profil
+        document.getElementById('repoCount').textContent = data.public_repos || 0;
+        document.getElementById('followersCount').textContent = data.followers || 0;
+        document.getElementById('followingCount').textContent = data.following || 0;
+        document.getElementById('gistsCount').textContent = data.public_gists || 0;
+
+    } catch (error) {
+        console.error("Erreur lors du chargement des stats GitHub :", error);
+        // Valeurs de secours si l'API bloque
+        document.getElementById('repoCount').textContent = "14";
+        document.getElementById('followersCount').textContent = "0";
+        document.getElementById('followingCount').textContent = "0";
+        document.getElementById('gistsCount').textContent = "0";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', fetchGitHubProfileStats);

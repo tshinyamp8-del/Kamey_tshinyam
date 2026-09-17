@@ -1,3 +1,6 @@
+/* Import des polices éditoriales et techniques */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
 /* Variables & Reset */
 * {
     margin: 0;
@@ -5,40 +8,68 @@
     box-sizing: border-box;
 }
 
+/* Fond sombre général de la page - Version Verte */
 body {
-    background-color: #0b0f12; /* Fond très sombre, presque noir teinté de bleu nuit */
+    background-color: #030805; /* Un fond noir teinté de vert très profond */
     color: #ffffff;
     overflow-x: hidden;
     position: relative;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: -0.01em; /* Donne cet aspect compact et professionnel typique des portfolios dev modernes */
+    letter-spacing: -0.01em;
 }
 
-/* Conteneur de la lueur d'arrière-plan */
+/* --- EFFET LUMINEUX INTERACTIF (Projecteur vert suivant le curseur) --- */
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, rgba(0, 180, 120, 0.03) 40%, transparent 75%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    filter: blur(50px);
+    transition: width 0.3s, height 0.3s;
+}
+
+/* Conteneur de la lueur d'arrière-plan ambiante */
 .background-glow {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Pour que la lumière ne bloque pas les clics */
+    pointer-events: none;
     z-index: -1;
     overflow: hidden;
 }
 
-/* La "tache" de lumière turquoise/bleue (effet lampe de poche) */
+/* Halos lumineux dynamiques (Vert émeraude, Vert néon, et légères touches cyan) */
 .background-glow::before {
     content: '';
     position: absolute;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(0, 180, 216, 0.25) 0%, rgba(0, 119, 182, 0.05) 50%, transparent 80%);
-    filter: blur(80px); /* Flou intense pour diffuser la lumière */
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 204, 102, 0.14) 0%, rgba(0, 255, 170, 0.03) 40%, transparent 80%);
+    filter: blur(140px);
 }
-/* Header & Menu (Barre horizontale fixe en haut) */
+
+.background-glow::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 150, 110, 0.08) 0%, rgba(0, 230, 255, 0.03) 50%, transparent 70%);
+    filter: blur(160px);
+}
+
+/* Header & Menu */
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -49,7 +80,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 100;
-    background: linear-gradient(to bottom, rgba(5,11,16,0.95), rgba(5,11,16,0.6));
+    background: linear-gradient(to bottom, rgba(3,10,6,0.95), rgba(3,10,6,0.6));
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -58,6 +89,7 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
 }
 
 .menu-btn {
@@ -73,11 +105,13 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .menu-btn:hover {
-    border-color: #00d2ff;
-    background: rgba(0, 210, 255, 0.05);
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.05);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
 }
 
 /* Navigation Overlay Coulissant */
@@ -88,7 +122,7 @@ body {
     width: 420px;
     max-width: 100%;
     height: 100%;
-    background-color: #070d14;
+    background-color: #040c08;
     border-left: 1px solid rgba(255, 255, 255, 0.08);
     z-index: 1000;
     display: flex;
@@ -111,10 +145,11 @@ body {
 }
 
 .nav-title-top {
-    color: #00d2ff;
+    color: #00ff88;
     font-size: 0.8rem;
     letter-spacing: 2px;
     font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .close-btn {
@@ -132,8 +167,8 @@ body {
 }
 
 .close-btn:hover {
-    border-color: #00d2ff;
-    background: rgba(0, 210, 255, 0.1);
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
 }
 
 .nav-content {
@@ -149,11 +184,12 @@ body {
 }
 
 .nav-category {
-    color: #00d2ff;
+    color: #00ff88;
     font-size: 0.75rem;
     letter-spacing: 2px;
     font-weight: 600;
     margin-bottom: 5px;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .nav-group ul {
@@ -173,17 +209,19 @@ body {
     justify-content: space-between;
     align-items: center;
     transition: color 0.3s;
+    font-family: 'Playfair Display', serif;
 }
 
 .nav-group ul li a:hover {
-    color: #00d2ff;
+    color: #00ff88;
 }
 
 .nav-num {
-    color: #00d2ff;
+    color: #00ff88;
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: normal;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .socials-grid {
@@ -193,7 +231,7 @@ body {
 }
 
 .socials-grid a {
-    color: #00d2ff;
+    color: #00ff88;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
@@ -213,7 +251,7 @@ section {
     justify-content: center;
 }
 
-/* Style par défaut : les titres restent à gauche (alignés avec le conteneur) */
+/* Style des titres de section */
 .section-title-container {
     position: relative;
     display: flex;
@@ -232,8 +270,9 @@ section {
     left: 120px;
     top: -40px;
     font-size: 10rem;
-    font-weight: 9S00;
-    color: rgba(255, 255, 255, 0.20);
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: rgba(255, 255, 255, 0.05);
     z-index: 0;
     user-select: none;
     line-height: 1;
@@ -246,6 +285,7 @@ section {
     letter-spacing: 3px;
     color: #ffffff;
     margin-left: -10px;
+    font-family: 'Playfair Display', serif;
 }
 
 /* 1. Hero Section */
@@ -266,9 +306,10 @@ section {
 
 .hero-main-title h1 {
     font-size: clamp(3.5rem, 7vw, 6rem);
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 25px;
     letter-spacing: -1px;
+    font-family: 'Playfair Display', serif;
 }
 
 .hero-actions {
@@ -288,8 +329,9 @@ section {
 }
 
 .btn-outline:hover {
-    border-color: #00d2ff;
-    background: rgba(0, 210, 255, 0.05);
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.05);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
 }
 
 .btn-link, .proj-link {
@@ -302,7 +344,7 @@ section {
 }
 
 .btn-link:hover, .proj-link:hover {
-    color: #00d2ff;
+    color: #00ff88;
 }
 
 .hero-footer-quote {
@@ -316,7 +358,7 @@ section {
 }
 
 #quoteText {
-    color: #00d2ff;
+    color: #00ff88;
     font-weight: 600;
     display: inline-block;
     opacity: 1;
@@ -329,7 +371,7 @@ section {
     transform: translateY(-8px);
 }
 
-/* 2. About Section */
+/* 2. About Section & Bento Cards */
 .about-grid {
     display: grid;
     grid-template-columns: 2.2fr 1fr;
@@ -340,12 +382,24 @@ section {
     align-items: center;
 }
 
-.about-card-container {
-    background: rgba(15, 23, 42, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.about-card-container, .bento-card {
+    background: rgba(10, 22, 16, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     padding: 40px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Effet de bordure lumineuse verte au survol */
+.about-card-container:hover, .bento-card:hover, .exp-card:hover, .project-card:hover, .contact-box:hover {
+    border-color: rgba(0, 255, 136, 0.5);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.15), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about-card-container {
     min-height: 380px;
     display: flex;
     flex-direction: column;
@@ -371,10 +425,11 @@ section {
     font-size: 0.85rem;
     letter-spacing: 1px;
     transition: color 0.3s;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .tab-btn.active, .tab-btn:hover {
-    color: #00d2ff;
+    color: #00ff88;
 }
 
 .tab-content {
@@ -397,7 +452,43 @@ section {
 
 .stats-grid strong {
     font-size: 2rem;
-    color: #00d2ff;
+    color: #00ff88;
+    font-family: 'Playfair Display', serif;
+}
+
+.stats-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 20px 10px;
+    transition: border-color 0.3s;
+}
+
+.stat-box:hover {
+    border-color: rgba(0, 255, 136, 0.4);
+}
+
+.stat-box strong {
+    display: block;
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    color: #00ff88;
+    margin-bottom: 5px;
+}
+
+.stat-box span {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .about-visual {
@@ -407,7 +498,7 @@ section {
 .visual-box {
     width: 100%;
     height: 380px;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
+    background: linear-gradient(135deg, #132b1e, #0a1711);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     overflow: hidden;
@@ -437,6 +528,7 @@ section {
     display: flex;
     margin-bottom: 20px;
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .marquee-track {
@@ -449,16 +541,18 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(30, 41, 59, 0.7);
+    background: rgba(15, 33, 24, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 12px 24px;
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     white-space: nowrap;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
 }
 
 .skill-badge i {
-    color: #00d2ff;
+    color: #00ff88;
 }
 
 .marquee-left {
@@ -490,19 +584,20 @@ section {
 }
 
 .exp-card, .project-card {
-    background: rgba(15, 23, 42, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 22, 16, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    backdrop-filter: blur(10px);
-    transition: border-color 0.3s, transform 0.3s;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .exp-card:hover, .project-card:hover {
-    border-color: #00d2ff;
+    border-color: #00ff88;
     transform: translateY(-5px);
 }
 
@@ -514,9 +609,10 @@ section {
 }
 
 .exp-date {
-    color: #00d2ff;
-    font-size: 0.9rem;
+    color: #00ff88;
+    font-size: 0.85rem;
     font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .exp-card h4 {
@@ -530,6 +626,7 @@ section {
     color: #ffffff;
     margin-bottom: 12px;
     letter-spacing: 0.5px;
+    font-family: 'Playfair Display', serif;
 }
 
 .exp-card p, .project-card p {
@@ -546,11 +643,14 @@ section {
 }
 
 .tags span {
-    background: rgba(0, 210, 255, 0.1);
-    color: #00d2ff;
+    background: rgba(0, 255, 136, 0.08);
+    color: #00ff88;
     padding: 4px 12px;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(0, 255, 136, 0.15);
 }
 
 .project-footer {
@@ -565,23 +665,27 @@ section {
 .proj-num {
     color: #64748b;
     font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 /* 6. Contact Section */
 .contact-box {
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 22, 16, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     padding: 50px;
     max-width: 900px;
     margin: 0 auto;
     width: 100%;
-    box-sizing: border-box; /* Empêche le padding de faire déborder la boîte */
+    box-sizing: border-box;
+    backdrop-filter: blur(12px);
+    transition: border-color 0.4s, box-shadow 0.4s;
 }
 
 .contact-box h3 {
     font-size: 3rem;
     margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
 }
 
 .contact-form {
@@ -589,10 +693,11 @@ section {
 }
 
 .form-step {
-    color: #00d2ff;
-    font-size: 0.85rem;
+    color: #00ff88;
+    font-size: 0.8rem;
     letter-spacing: 2px;
     margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .input-group {
@@ -608,6 +713,7 @@ section {
     color: #fff;
     font-size: 1.2rem;
     width: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .input-group input::placeholder {
@@ -624,7 +730,7 @@ section {
 }
 
 .input-group button:hover {
-    color: #00d2ff;
+    color: #00ff88;
 }
 
 .contact-details {
@@ -633,14 +739,14 @@ section {
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur mobile si besoin */
+    flex-wrap: wrap;
     gap: 15px;
 }
 
 .social-links {
     display: flex;
-    flex-wrap: wrap; /* INDISPENSABLE : force les liens à aller à la ligne au lieu de déborder */
-    gap: 15px;       /* Espace propre entre les badges */
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .social-links a {
@@ -648,32 +754,19 @@ section {
     text-decoration: none;
     text-transform: lowercase;
     transition: color 0.3s;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
 }
 
 .social-links a:hover {
-    color: #00d2ff;
+    color: #00ff88;
 }
 
 .location-info p {
     color: #94a3b8;
     text-align: right;
     font-size: 0.9rem;
-}
-
-/* --- RESPONSIVE MOBILE --- */
-@media (max-width: 768px) {
-    .contact-box {
-        padding: 25px 20px; /* Réduit les marges intérieures pour gagner de la place */
-    }
-
-    .contact-details {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .location-info p {
-        text-align: left; /* Aligne la localisation proprement sur mobile */
-    }
+    font-family: 'JetBrains Mono', monospace;
 }
 
 /* Site Footer */
@@ -683,7 +776,8 @@ section {
     padding: 30px 50px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: #64748b;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .site-footer a {
@@ -696,7 +790,7 @@ section {
     color: #fff;
 }
 
-/* Responsive */
+/* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
     .hero-main-title h1 { font-size: 3rem; }
     .about-grid { grid-template-columns: 1fr; }
@@ -704,13 +798,6 @@ section {
     .location-info p { text-align: left; }
     section { padding: 100px 20px 60px 20px; }
     .site-header { padding: 20px; }
-}
-
-.bento-card {
-    background: rgba(18, 24, 30, 0.65); /* Fond sombre semi-transparent */
-    backdrop-filter: blur(12px);        /* Effet verre dépoli */
-    -webkit-backdrop-filter: blur(12px);  /* Pour compatibilité Safari */
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Bordure très fine et subtile */
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    .contact-box { padding: 25px 20px; }
+    .stats-grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
